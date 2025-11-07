@@ -1,15 +1,54 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    static void afficherProduits(String[] produits, Double[] prix, int[] stock) {
+          System.out.println("Produits disponibles : ");
+          for (int i=0; i<produits.length;i++){
+              System.out.println(produits[i]+". Eau ("+prix[i] +" MAD) - Stock : "+stock[i] );
+          }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
         }
-    }
+
+
+    public static void main (String[] args){
+        String[] produits = {"Eau", "Soda", "Chips", "Chocolat"};
+        Double[] prix = {5.0, 8.0, 12.0, 15.0};
+        int[] stock = {10, 5, 7, 3};
+        Scanner scanner = new Scanner(System.in);
+        boolean continuer = true;
+
+        System.out.println("=== Bienvenue au distributeur automatique ===");
+
+
+        while (continuer) {
+            System.out.println("\n--- MENU PRINCIPAL ---");
+            System.out.println("1. Afficher les produits");
+            System.out.println("2. Acheter un produit");
+            System.out.println("3. Quitter");
+            System.out.print("Choisissez une option : ");
+            int choix = scanner.nextInt();
+
+            switch (choix) {
+                case 1:
+                    afficherProduits(produits, prix, stock);
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+                    System.out.println("Merci de votre visite !");
+                    continuer = false;
+                    break;
+
+                default:
+                    System.out.println("Option invalide. Veuillez réessayer.");
+            }
+        }
+
+
+}
 }
