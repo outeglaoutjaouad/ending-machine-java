@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class VendingMachine {
     static void afficherProduits(String[] produits, Double[] prix, int[] stock) {
           System.out.println("Produits disponibles : ");
           for (int i=0; i<produits.length;i++){
@@ -26,7 +26,8 @@ public class Main {
             System.out.println("\n--- MENU PRINCIPAL ---");
             System.out.println("1. Afficher les produits");
             System.out.println("2. Acheter un produit");
-            System.out.println("3. Quitter");
+            System.out.println("3. Afficher update-stock ");
+            System.out.println("4. Quitter");
             System.out.print("Choisissez une option : ");
             int choix = scanner.nextInt();
 
@@ -36,10 +37,16 @@ public class Main {
                     break;
 
                 case 2:
-
+                  //  acheterProduit(produits,prix,stock);
                     break;
 
                 case 3:
+                    //acheterProduit(produits,prix,stock);
+                    //afficherStock(produits,prix,stock);
+                    break;
+
+
+                case 4:
                     System.out.println("Merci de votre visite !");
                     continuer = false;
                     break;
