@@ -5,7 +5,7 @@ public class VendingMachine {
          Scanner scan = new Scanner(System.in);
          int num = scan.nextInt();
            if(num > produits.length || num <0 ){
-               System.out.println("Produit invalid");
+               System.out.println("Produit invalide");
            }
         if (stock[num] ==0 ) {
               System.out.println("produit n'existe pas dans stock");
